@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/EliLV21/sosVial/issues"
   },
-  "homepage": "https://github.com/EliLV21/sosVial#readme"
+  "homepage": "https://github.com/EliLV21/sosVial#readme",
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "materialize-css": "^0.100.1"
+  }
 }
