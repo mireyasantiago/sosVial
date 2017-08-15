@@ -1,0 +1,19 @@
+{
+  "name": "sosvial",
+  "version": "1.0.0",
+  "description": "Proyecto con Getecsa en el TalentFest Laboratoria 2017",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EliLV21/sosVial.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EliLV21/sosVial/issues"
+  },
+  "homepage": "https://github.com/EliLV21/sosVial#readme"
+}
