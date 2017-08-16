@@ -40,8 +40,11 @@ var validarInput= function(){
     botonUsuario.classList.add("disabled");
   }
 }
+// se creara una function para la redireccion
+
 
 
 celularUsuario.addEventListener("keyup", validarcelular);
 nombreUsuario.addEventListener("keyup", validarApellidoNombre);
 apellidoUsuario.addEventListener("keyup", validarApellidoNombre);
+botonUsuario.addEventListener("click", validarInput);
