@@ -1,0 +1,74 @@
+// Initialize Firebase. La inicializacion esta en el archivo general.js
+  
+
+//Dom
+const txtEmail= document.getElementById('txtEmail');
+const txtPassword= document.getElementById('txtPassword');
+const btnSignUp= document.getElementById('btnSignUp');
+const btnLogin= document.getElementById('btnLogin');
+const btnLogout= document.getElementById('btnLogout');
+
+//Eventos
+//Evento de registrar (Boton SignUp) usa el metodo createUserWithEmailAndPassword
+
+btnSignUp.addEventListener('click', e => {
+   const email= txtEmail.value;
+    const pass= txtPassword.value;
+    const auth= firebase.auth();
+        //Promesa
+        const promise = auth.createUserWithEmailAndPassword(email, pass);
+    promise.catch(e => console.log(e.message));
+});
+
+//Evento entrar (Boton Login) usa el metodo singInWithEmailAndPassword
+btnLogin.addEventListener('click', e =>{
+    const email= txtEmail.value;
+    const pass= txtPassword.value;
+    const auth= firebase.auth();
+    
+    const promise = auth.singInWithEmailAndPassword(email, pass);
+        promise.catch(e => console.log(e.message));
+});
+
+//Evento Salir (Boton Logout) usa el metodo singInWithEmailAndPassword
+btnLogout.addEventListener('click', e =>{
+    firebase.auth().signOut();
+});
+
+//Escuchador en tiempo real de si hay un cambio en el estado de logeo, es decir si esta logeado o no esta logeado
+firebase.auth().onAuthStateChanged(firebaseUser =>{
+    if(firebaseUser){
+        console.log(firebaseUser);
+    }else{
+        console.log('no estas logueado')
+    }
+});
+
+
+//Logeo con Google
+
+//Evento en el boton de Google
+ const btnGoogle = document.getElementById('id-google');
+ btnGoogle.addEventListener( 'click', iniciarSesionGoogle);
+
+ function obtenerDatosGoogle(provider){
+    firebase.auth().signInWithPopup(provider).then(function (result) {
+        var token = result.credential.accessToken;
+        var user = result.user;
+         console.log('user', user);
+        console.log(user.displayName)
+    }).catch(function (error) {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        var email = error.email;
+        var credential = error.credential;
+
+        console.log('error', error);
+    });
+
+}
+
+function iniciarSesionGoogle(provider) {
+    var provider = new firebase.auth.GoogleAuthProvider();
+    obtenerDatosGoogle(provider);
+}
