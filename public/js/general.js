@@ -1,3 +1,4 @@
+
 var config = {
     apiKey: "AIzaSyCy4ggnMjzn2mrB3aws6kaQqtqyKEhLZOY",
     authDomain: "sos-vial-65f5f.firebaseapp.com",
@@ -7,3 +8,4 @@ var config = {
     messagingSenderId: "159699658573"
   };
   firebase.initializeApp(config);
+
