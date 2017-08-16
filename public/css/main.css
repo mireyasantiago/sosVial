@@ -6,9 +6,12 @@
 	margin-top: 20%;
 }
 #logoNav{
-	width: 50%;
-	margin-top: 5%;
+	width: 30%;
+	margin-top: 3%;
 }
 nav{
+	background-color: #323A53;
+}
+.btn .btn-large{
 	background-color: #323A53;
 }
