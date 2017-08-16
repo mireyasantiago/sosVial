@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/EliLV21/sosVial#readme",
   "dependencies": {
+    "firebase": "^4.2.0",
     "jquery": "^3.2.1",
     "materialize-css": "^0.100.1"
   }
