@@ -33,6 +33,14 @@ btnLogin.addEventListener('click', e =>{
     promise.then(e => {location.href="ubicacion.html"}).catch(e => console.log(e.message));
 });
 
+/*agregamos al usuario a nuestra base de datos al mismo tiempo que los creamos, lograndolo llamando a esta función dentro del proceso de sign in*/
+function guardandoDatos(txtEmail,txtPassword) {
+  firebase.database().ref('user').set({
+    email: txtEmail,
+    pass: txtPassword
+  });
+}
+
 //Evento Salir (Boton Logout) usa el metodo singInWithEmailAndPassword
 btnLogout.addEventListener('click', e =>{
     firebase.auth().signOut();
