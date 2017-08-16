@@ -32,23 +32,23 @@
 		      <label for="ubicacion"></label>
 		    </div>
 				<div class="input-field col s10 offset-s1">
-			  	<input id="nombre" type="text" placeholder="Nombre" class="validate">
+			  	<input id="nombre" type="text" placeholder="Nombre" class="validate" minlength="5" maxlength="40"  required pattern="/^[A-Za-z+][\s[A-Za-z]+]*$/">
 					<label for="first_name"></label>
 				</div>
 				<div class="input-field col s10 offset-s1">
-			 		<input id="apellido" type="text" placeholder="Apellido" class="validate">
+			 		<input id="apellido" type="text" placeholder="Apellido" class="validate" minlength="5" maxlength="40" required pattern="/^[A-Za-z+][\s[A-Za-z]+]*$/">
 			  	<label for="last_name"></label>
 				</div>
 				<div class="input-field col s10 offset-s1">
-			  	<input id="celular" type="number" placeholder="Celular" class="validate">
+			  	<input id="celular" type="number" placeholder="Celular" class="validate" minlength="5" maxlength="12" required pattern="/^[8]{1}[1-9]{2}[0-9]{5}$/">
 			  	<label for="celphone"></label>
 				</div>
 				<div class="input-field col s10 offset-s1">
-			  	<input id="placas" type="text" class="validate" placeholder="Placas">
+			  	<input id="placas" type="text" class="validate" placeholder="Placas" minlength="2" maxlength="7" required pattern="^([A-Z]{3}-\d{3,4})$">
 			  	<label for="placas"></label>
 				</div>
 				<div class="col s4 col offset-s3">
-          <button type="submit" name="button">Ingresar Datos</button>					
+          <button type="submit" name="button">Ingresar Datos</button>
 				</div>
 			</div>
 
