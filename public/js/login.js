@@ -17,7 +17,9 @@ btnSignUp.addEventListener('click', e => {
     const auth= firebase.auth();
         //Promesa
         const promise = auth.createUserWithEmailAndPassword(email, pass);
-    promise.catch(e => console.log(e.message));
+	
+    promise.then(e => {location.href="ubicacion.html"}).catch(e => console.log(e.message));
+
 });
 
 //Evento entrar (Boton Login) usa el metodo singInWithEmailAndPassword
@@ -25,9 +27,10 @@ btnLogin.addEventListener('click', e =>{
     const email= txtEmail.value;
     const pass= txtPassword.value;
     const auth= firebase.auth();
+	
     
     const promise = auth.singInWithEmailAndPassword(email, pass);
-        promise.catch(e => console.log(e.message));
+    promise.then(e => {location.href="ubicacion.html"}).catch(e => console.log(e.message));
 });
 
 //Evento Salir (Boton Logout) usa el metodo singInWithEmailAndPassword
@@ -56,7 +59,8 @@ firebase.auth().onAuthStateChanged(firebaseUser =>{
         var token = result.credential.accessToken;
         var user = result.user;
          console.log('user', user);
-        console.log(user.displayName)
+        console.log(user.displayName);
+		location.href="ubicacion.html"
     }).catch(function (error) {
         var errorCode = error.code;
         var errorMessage = error.message;
