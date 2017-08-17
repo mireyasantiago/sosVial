@@ -19,6 +19,7 @@ btnSignUp.addEventListener('click', e => {
         const promise = auth.createUserWithEmailAndPassword(email, pass);
 	
     promise.then(e => {location.href="ubicacion.html"}).catch(e => console.log(e.message));
+	guardandoDatos(email,pass)
 
 });
 
@@ -35,7 +36,7 @@ btnLogin.addEventListener('click', e =>{
 
 /*agregamos al usuario a nuestra base de datos al mismo tiempo que los creamos, lograndolo llamando a esta función dentro del proceso de sign in*/
 function guardandoDatos(txtEmail,txtPassword) {
-  firebase.database().ref('user').set({
+  firebase.database().ref('usuarios').push({
     email: txtEmail,
     pass: txtPassword
   });
@@ -84,3 +85,8 @@ function iniciarSesionGoogle(provider) {
     var provider = new firebase.auth.GoogleAuthProvider();
     obtenerDatosGoogle(provider);
 }
+
+/*termina login con google+*/
+
+
+/**/
